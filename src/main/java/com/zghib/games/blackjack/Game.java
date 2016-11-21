@@ -39,17 +39,15 @@ public class Game {
             System.out.println(player.getHandSum());
         }
         while (!dealerStop) {
-            if (!dealerStop) {
-                if (dealer.getHandSum() < 17) {
-                    System.out.println("The dealer hits");
-                    dealer.addCard(deck.dealCard());
-                    dealer.printHand(false);
-                    if (dealer.getHandSum() > 21) {
-                        dealerStop = true;
-                    }
-                } else {
+            if (dealer.getHandSum() < 17) {
+                System.out.println("The dealer hits");
+                dealer.addCard(deck.dealCard());
+                dealer.printHand(false);
+                if (dealer.getHandSum() > 21) {
                     dealerStop = true;
                 }
+            } else {
+                dealerStop = true;
             }
             System.out.println();
         }
